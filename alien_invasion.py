@@ -40,9 +40,8 @@ class AlienInvasion:
         # Atualiza as imagens na tela e muda para a nova tela
         self.screen.fill(self.settings.bg_color)
         self.ship.blitme() # Desenha a espaçonave
-
-    # Deixa a tela desenhada mais recente visível
-    pygame.display.flip()
+        # Deixa a tela desenhada mais recente visível
+        pygame.display.flip()
 
 if __name__ == '__main__':
     # Cria uma instância do jogo e execute o jogo.
