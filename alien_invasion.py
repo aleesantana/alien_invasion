@@ -1,6 +1,6 @@
 import sys
 import pygame
-from settings import Settings
+from settings import Settings 
 from ship import Ship
 
 class AlienInvasion:
@@ -12,8 +12,11 @@ class AlienInvasion:
         self.clock = pygame.time.Clock() # Inicializa o relógio do Pygame
         self.settings = Settings()
 
+        #  Cria uma nova janela de jogo com a largura e altura especificadas
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))
+        
+        # Define o título da janela do jogo
         pygame.display.set_caption("Alien Invasion")
 
         self.ship = Ship(self)
@@ -21,19 +24,25 @@ class AlienInvasion:
     def run_game(self):
         """Inicia o loop principal do jogo."""
         while True:
-            # Observa eventos de teclado e mouse
-            for event in pygame.event.get():
+            self._check_events()
+            self._update_screen()
+            # Controla a taxa de frames
+            self.clock.tick(60) # Limita a 60 frames por segundo
+
+    def _check_events(self):
+        """Responde as teclas pressionadas e a eventos de mouse."""
+        # verifica se o tipo de evento é pygame.QUIT, para sair do jogo
+        for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
 
-            # Redesenha a tela durante cada passagem pelo loop
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
+    def _update_screen(self):
+        # Atualiza as imagens na tela e muda para a nova tela
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme() # Desenha a espaçonave
 
-            # Deixa a tela desenhada mais recente visível
-            pygame.display.flip()
-            # Controla a taxa de frames
-            self.clock.tick(60) # Limita a 60 frames por segundo
+    # Deixa a tela desenhada mais recente visível
+    pygame.display.flip()
 
 if __name__ == '__main__':
     # Cria uma instância do jogo e execute o jogo.
