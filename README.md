@@ -1,0 +1,3 @@
+No jogo Invasão Alienígena, o jogador controla uma espaçonave que aparece no centro inferior da tela. O jogador pode manobrar a espaçonave para a direita e para a esquerda, usando as setas do teclado e atirar usando a barra de espaço. 
+Quando o jogo começa, uma frota de alienígenas toma conta do céu, deslocando-se para cima, para baixo e para os lados da tela. O jogador abre fogo e destrói os alienígenas. Se o jogador destruir todos os alienígenas, aparece uma nova 
+frota que se desloca mais rápido que a frota anterior. Se algum alienígena abater a espaçonave do jogador ou a parte inferior dela, o jogador perde a espaçonave. Se o jogador perder três espaçonaves, o jogo termina.
